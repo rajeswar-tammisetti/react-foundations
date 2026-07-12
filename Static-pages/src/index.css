@@ -8,3 +8,19 @@ body {
 h1 {
     margin-top: 30px;
 }
+.nav-list{
+    display: flex;
+    list-style:none;
+}
+.nav-list > li{
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo{
+    width: 55px;
+}

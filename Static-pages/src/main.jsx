@@ -1,30 +1,36 @@
 import {createRoot} from "react-dom/client"
-import "./index.css"
 import {Fragment} from "react"
 
-/** Challenge:
+/*
+ * Challenge:
  * 
- * Move the `header` element from the Page component into 
- * its own component called "Header"
- 
- * Move the `main` element into its own component called "MainContent" 
- * and render that component inside the Page component.
- 
- * Do the same with the `footer` element, moving it into a new
- * component called "Footer"
- 
- * Then render an instance of the Header component inside
- * the Page component where the `header` used to be.
-*/
-
+ * - Add a `nav` > `ul` > `li` (x3). The 3 items should say:
+ *   "Pricing", "About", and "Contact"
+ *
+ * Using flexbox, line up the `li`s horizontally and put them inline
+ * with the React logo.
+ * 
+ * NOTE: for practice's sake, don't select any
+ * elements, but use classes for all styling.
+ * 
+ * Move the `width` style off the JSX and into CSS with a dedicated
+ * className on the img element, and change the width to 55px instead
+ */
 const root=createRoot(document.getElementById("root"));
 root.render(
     <Page></Page>
 )
 function Header(){
     return(
-        <header>
-            <img src="react-logo.png" alt="react-logo" width="40px"></img>
+        <header className="header">
+            <img src="react-logo.png" alt="react-logo" width="40px" className="nav-logo"></img>
+            <nav>
+                <ul className="nav-list">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
         </header>
     )
 }
