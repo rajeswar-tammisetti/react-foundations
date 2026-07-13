@@ -21,6 +21,11 @@ Challenge: Project setup
   Put the `<links />` to those fonts ABOVE the style.css link in index.html.
   You may need to do some extra research to figure out how this 
   works if you haven't done it before.
+
+  Challenge: Place the gray react logo in the background
+
+  Don't use an `img` element, but rather set it as the
+  `background-image` of the `main` element.
 */
 
 

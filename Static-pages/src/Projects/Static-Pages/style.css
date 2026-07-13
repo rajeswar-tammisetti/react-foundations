@@ -1,32 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-body{
-    font-family: 'Inter', sans-serif;
-    background-color:#2D3138;
-    color:white;
-    margin:0;
+
+* {
+    box-sizing: border-box;
 }
-header{
-    color:#58BBD9;
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #2d3138;
+    color: white;
+    margin: 0;
+}
+
+header {
     background-color: #141414;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-.nav-logo{
+
+.nav-logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 0 30px;
 }
-.nav-logo>img{
+
+.nav-logo>img {
     padding: 0 5 0 0px;
     width: 35px;
 }
 
-.main{
-    margin:30px;
-    background-color: #2D3138;
+.main {
+    padding: 10px 30px;
+    background-image:url("react-logo-half.png");
+    background-repeat: no-repeat;
+    background-position:right 50%;
 }
-.main-heading{
-    font-size:2.5rem;
+
+.nav-logo>h1 {
+    color: #58bbd9;
 }
+
+.main-heading {
+    font-size: 2.5rem;
+}
+
 .fun-facts{
-    line-height: 40px;
+    max-width: 500px;
+}
+.fun-facts>li {
+    margin-block: 10px;
+    line-height: 20px;
+}
+.fun-facts>li::marker{
+    color: #58bbd9;
+    font-size: 1.5rem;
 }
