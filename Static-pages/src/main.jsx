@@ -25,8 +25,9 @@
 
 
 
-import App from "./Projects/Static-Pages/App"
-import {createRoot} from "react-dom/client"
+// import App from "./Projects/Static-Pages/App"
+import App from "./Projects/Travel-Journer/App"
+import { createRoot } from "react-dom/client"
 
-const root=createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 root.render(<App />)
