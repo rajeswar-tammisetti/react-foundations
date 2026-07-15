@@ -26,13 +26,27 @@
 
 import Header from "./components/Header.jsx"
 import Entry from "./components/Entry.jsx"
+import Data from "./components/data.jsx"
 import "./style.css"
+
 export default function App() {
     return (
-        <>
-            <Header />
-            <Entry />
-        </>
+        <div>
+            {Data.map((card) => {
+                console.log(card);
+                return(
+                    <Entry 
+                    key={card.id}
+                    img={card.img}
+                    title={card.title}
+                    country={card.country}
+                    googleMapsLink={card.googleMapsLink}
+                    dates={card.dates}
+                    text={card.text}
+                    />
+                )
+            })}
+        </div>
     )
 }
 
