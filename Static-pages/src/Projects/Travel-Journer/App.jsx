@@ -31,20 +31,24 @@ import "./style.css"
 
 export default function App() {
     return (
-        <div>
-            {Data.map((card) => {
-                return(
-                    <Entry 
-                    key={card.id}
-                    img={card.img}
-                    title={card.title}
-                    country={card.country}
-                    googleMapsLink={card.googleMapsLink}
-                    dates={card.dates}
-                    text={card.text}
-                    />
-                )
-            })}
+        <div >
+            <Header />
+
+            <div className="entries-list">
+                {Data.map((card) => {
+                    return(
+                        <Entry 
+                        key={card.id}
+                        img={card.img}
+                        title={card.title}
+                        country={card.country}
+                        googleMapsLink={card.googleMapsLink}
+                        dates={card.dates}
+                        text={card.text}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }
