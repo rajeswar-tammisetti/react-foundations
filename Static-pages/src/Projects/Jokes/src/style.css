@@ -1,0 +1,29 @@
+body{
+    margin: 30px;
+    background-color: #FFFFFF;
+}
+.jokes-list{
+    max-width: 80%;
+}
+.joke{
+    background-color: #F4E9FF;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s  ease ,box-shadow 0.3s ease;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.joke:hover{
+    color: white;
+    background-color: #976B96;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+.setup{
+    font-weight: bold;
+    font-size: 30px;
+}
+.punchline{
+    font-size: 30px;
+}
