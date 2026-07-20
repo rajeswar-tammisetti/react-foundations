@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +9,7 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 300px 1fr;
-  font-family: consolas, Inter, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 header {
@@ -22,5 +24,8 @@ header {
 }
 
 img {
-  height: 50px;
+  width: 50px;
+}
+header > h1 {
+  font-weight: 400;
 }
