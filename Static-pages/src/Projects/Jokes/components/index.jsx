@@ -1,5 +1,4 @@
 export default function renderJokes(prop){
-    console.log(prop)
     return(
         <div className="joke">
             {prop.setup && <p className="setup">Setup: {prop.setup}</p>}
