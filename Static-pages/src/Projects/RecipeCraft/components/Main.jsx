@@ -1,28 +1,19 @@
+import React from "react"
 export default function Main() {
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
-    const ingredientsList = ingredients.map(ingredient =>
-    (
-        <li>{ingredient}</li>
-    ))
+    const [ingredients, setIngredients] = React.useState([])
+    const ingredientsListItems = ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)
 
     /**
-     * Challenge:
-     * Add an `onSubmit` event listener on the form. Have the function
-     * simply console.log("Form submitted!") for now
-     
-     * Challenge:
-     * Add the new ingredient to the array of ingredients. Also, add a 
-     * console.log(ingredients) after adding the ingredient, because 
-     * **warning**: you aren't going to see the page update!
-     * 
-     * Hint: this is a one-liner solution, so don't overthink it 😅
+     * Challenge: Update our app so that when the user enters a
+     * new ingredient and submits the form, it adds that new
+     * ingredient to our list!
      */
 
     function handleSubmit(event) {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
-        console.log(newIngredient)
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
     return (
@@ -32,7 +23,7 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
             <ul>
-                {ingredientsList}
+                {ingredientsListItems}
             </ul>
         </main>
     )
