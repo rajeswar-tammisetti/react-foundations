@@ -27,10 +27,10 @@
 
 // import App from "./Projects/Static-Pages/App"
 // import App from "./Projects/Travel-Journer/App"
-// import App from "./Projects/Jokes/App"
+import App from "./Projects/Jokes/App"
 // import App from "./Projects/RecipeCraft/App"
 // import App from "./Projects/use-state/App"
-import App from "./Projects/reactForms/App"
+// import App from "./Projects/reactForms/App"
 
 import { createRoot } from "react-dom/client"
 
