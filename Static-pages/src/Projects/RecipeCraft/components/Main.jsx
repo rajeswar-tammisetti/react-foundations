@@ -7,9 +7,9 @@ export default function Main() {
 
     /**
      * Challenge:
-     * 3. When the user clicks the "Get a recipe" button, flip the
+     * 1. When the user clicks the "Get a recipe" button, flip the
      *    `recipeShown` state to true.
-     * 4. Only display the recipe code content if `recipeShown` is true.
+     * 2. Only display the recipe code content if `recipeShown` is true.
      */
     function showRecipe() {
         changeRecipeShown(prevState =>!prevState)
