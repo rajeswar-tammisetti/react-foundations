@@ -11,9 +11,9 @@ export default function Counter() {
     return (
         <div id="container">
             <h1>Counter</h1><br />
-            <button onClick={decrement}>-</button>
+            <button style={{color:"black"}} onClick={decrement}>-</button>
             <RenderH1 number={counter} />
-            <button onClick={increment}>+</button>
+            <button style={{color:"black"}} onClick={increment}>+</button>
         </div>
     )
 }
