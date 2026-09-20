@@ -1,34 +1,33 @@
 import React from "react"
 import ClaudeRecipe from './ClaudeRecipe.jsx'
 import IngredientsList from './IngredientsList.jsx'
+import {getRecipeFromMistral} from './Ai.jsx'
+
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([])
-    const [recipeShown, changeRecipeShown] = React.useState(false)
-
+    const [recipe, setRecipe] = React.useState("")
     const ingredientsListItems = ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)
 
     /**
-     * Challenge: clean up our code!
-     * Let's make a couple new components to make things a
-     * little cleaner.
+     * Challenge: Get a recipe from the AI!
      * 
-     * 1. Move the entire recipe <section> into its own
-     *    ClaudeRecipe component
-     * 2. Move the list of ingredients <section> into its
-     *    own IngredientsList component.
+     * This will be a bit harder of a challenge that will require you
+     * to think critically and synthesize the skills you've been
+     * learning and practicing up to this point.
      * 
-     * While you're considering how to structure things, consider
-     * where state is, think about if it makes sense or not to
-     * move it somewhere else, how you'll communicate between
-     * the parent/child components, etc.
+     * Using either the `getRecipeFromChefClaude` function or the 
+     * `getRecipeFromMistral` function, make it so that when the user
+     * clicks "Get a recipe", the text response from the AI is displayed
+     * in the <ClaudeRecipe> component.
      * 
-     * The app should function as it currently does when you're
-     * done, so there will likely be some extra work to be done
-     * beyond what I've listed above.C
+     * For now, just have it render the raw markdown that the AI returns,
+     * don't worry about making it look nice yet. (We're going to use a
+     * package that will render the markdown for us soon.)
      */
 
-    function showRecipe() {
-        changeRecipeShown(prevState =>!prevState)
+    async function getRecipe() {
+        const recipeMarkdown=await getRecipeFromMistral(ingredients)
+        setRecipe(recipeMarkdown)
     }
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
@@ -43,18 +42,8 @@ export default function Main() {
                 <input type="text" placeholder="e.g. oregan" aria-label="Add ingredient" name="ingredient" />
                 <button>Add ingredient</button>
             </form>
-            {ingredients.length > 0 && <section class="content">
-                <h2>Ingredients on hand:</h2>
-                <IngredientsList ingredients={ingredients}/>
-                {ingredients.length > 3 && <div className="get-recipe-container">
-                    <div>
-                        <h3>Ready for a recipe?</h3>
-                        <p>Generate a recipe from your list of ingredients.</p>
-                    </div>
-                    <button onClick={showRecipe}>Get a recipe</button>
-                </div>}
-            </section>}
-            {recipeShown && <ClaudeRecipe/>}
+            {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe}/>}
+            {recipe && <ClaudeRecipe recipe={recipe}/>}
         </main>
     )
 }
