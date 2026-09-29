@@ -1,13 +1,15 @@
 import Initial from "./components/initial.jsx"
-import Counter from "./components/Counter.jsx"
+// import Counter from "./components/Counter.jsx"
 import Challenge from "./components/Challenge.jsx"
-import "./styles.css"
+import UseEffect from "./components/UseEffect.jsx"
+// import "./styles.css"
 export default function App() {
     return (
         <>
             {/* <Initial /> */}
             {/* <Challenge /> */}
-            <Counter />
+            {/* <Counter /> */}
+            <UseEffect />
         </>
     )
 }
