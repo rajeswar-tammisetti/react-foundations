@@ -22,7 +22,7 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
     const [allMemes, setAllMemes] = React.useState([]);
-    const [memeIndex, setMemeIndex] = React.useState([0]);
+    // const [memeIndex, setMemeIndex] = React.useState([0]);
     function handleChange(event) {
         const { value, name } = event.currentTarget;
         setMeme((prevMeme) => ({
@@ -33,7 +33,8 @@ export default function Main() {
     function memeChange() {
         // const nextIndex = (memeIndex + 1) % allMemes.length
         // setMemeIndex(nextIndex)
-        setMemeIndex((prevIndex)=>(prevIndex+1)%allMemes.length);
+        // setMemeIndex((prevIndex)=>(prevIndex+1)%allMemes.length);
+        const memeIndex = Math.floor(Math.random()*allMemes.length);
         setMeme((prevMeme) => ({
             ...prevMeme,
             imageUrl: allMemes[memeIndex].url
