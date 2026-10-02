@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #0c4a6e;
+  background-color: #333333;
   margin: 0;
   font-family: "Inter", sans-serif;
 }
@@ -58,4 +58,7 @@ main {
 .card .favorite-button:active {
   transform: none;
   box-shadow: none;
+}
+button {
+  color:black;
 }
